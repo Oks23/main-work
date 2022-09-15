@@ -1,0 +1,153 @@
+{
+  "discounts": [{
+      "name": "Рол тижня",
+      "title": "Щотижня діє знижка 50% на один з ролів у нашому меню.",
+      "description": "“Рол тижня” ви можете знайти на головній сторінці нашого сайту.\nЗнижка діє при мінімальній сумі замовлення 200 грн.\nЦя акція не поєднується з іншими акціями.",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/final-work-logos.appspot.com/o/imgonline-com-ua-compressed-ryna9n84oqh1-scaled-697x379.jpg?alt=media&token=a18ac60d-6c10-412b-84a1-9c8b076cd05d",
+      "id": 1
+    },
+    {
+      "name": "Кожен п'ятий рол в подарунок",
+      "title": "\"3+1=5\"",
+      "description": "Замовляйте 4 роли та отримуйте ще 1 безкоштовно.\nЗамовляйте 8 та отримуйте ще 2 безкоштовно і так далі.\nБезкоштовним вважається рол з найменшою вартістю.\nЦя акція не поєднується з іншими акціями.",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/final-work-logos.appspot.com/o/imgonline-com-ua-compressed-ajbic74qfau00-scaled-697x379.jpg?alt=media&token=91db399c-e480-4614-bcef-0525d83edfb3",
+      "id": 2
+    },
+    {
+      "name": "Самовивіз",
+      "title": "Забирайте своє замовлення самостійно та отримуйте переваги",
+      "description": "Забирайте своє замовлення самостійно та отримуйте такі переваги:\n\nЗапечені моно макі з лососем у подарунок.\nВідсутність мінімальної суми замовлення.\nЧас очікування на замовлення до 30 хв.\nДля отримання акційного ролу у подарунок зберігається умова мінімальної суми замовлення 200 грн.\nЦя акція не поєднується з іншими акціями",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/final-work-logos.appspot.com/o/imgonline-com-ua-compressed-pa0akdpwddstmsv1-scaled-697x379.jpg?alt=media&token=0397b0ee-86e1-462c-a5fd-ca4381d5cfad",
+      "id": 3
+    }
+  ],
+  "categories": [{
+      "name": "Акції",
+      "path": "акції",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/final-work-logos.appspot.com/o/01.-syrnyj.jpg.pagespeed.ce.H76YcCbCou.jpg?alt=media&token=528bd54b-212e-4406-a951-4f28197f1f27",
+      "id": 7
+    },
+    {
+      "name": "Роли",
+      "path": "роли",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/final-work-logos.appspot.com/o/01.-syrnyj.jpg.pagespeed.ce.H76YcCbCou.jpg?alt=media&token=528bd54b-212e-4406-a951-4f28197f1f27",
+    "id": 8
+    },
+    {
+      "name": "Сети",
+      "path": "сети",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/final-work-logos.appspot.com/o/imgonline-com-ua-compressed-wnclohqe80-scaled.jpg.pagespeed.ce.DxC77gzUKm.jpg?alt=media&token=d1c78172-2d86-4162-9515-8553c3b98eb5",
+    "id": 9
+    },
+    {
+      "name": "Напої",
+      "path": "напої",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/final-work-logos.appspot.com/o/pepsicola.jpg.pagespeed.ce._GE3wDu348.jpg?alt=media&token=4c71428f-76f6-4b4b-9205-5b888e15bd4e",
+      "id": 10
+    },
+    {
+      "name": "Соуси",
+      "path": "соуси",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/final-work-logos.appspot.com/o/4444.png.pagespeed.ce.eju3nbNNBX.png?alt=media&token=af2aa9cb-f610-4beb-9dae-8264beba8536",
+      "id": 11
+    }
+  ],
+  "products": [{
+      "name": "Сирний",
+      "category": {
+        "name": "Роли",
+        "path": "роли",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/final-work-logos.appspot.com/o/01.-syrnyj.jpg.pagespeed.ce.H76YcCbCou.jpg?alt=media&token=528bd54b-212e-4406-a951-4f28197f1f27",
+        "id": 8
+      },
+      "path": "роли",
+      "description": "Риc, крем сир, огірок, лосось",
+      "weight": "240",
+      "price": 149,
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/final-work-logos.appspot.com/o/01.-syrnyj.jpg.pagespeed.ce.H76YcCbCou.jpg?alt=media&token=528bd54b-212e-4406-a951-4f28197f1f27",
+        "count": 1,
+      "id": 1
+    },
+    {
+      "name": "Філадельфія з лососем",
+      "category": {
+        "name": "Роли",
+        "path": "роли",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/final-work-logos.appspot.com/o/01.-syrnyj.jpg.pagespeed.ce.H76YcCbCou.jpg?alt=media&token=528bd54b-212e-4406-a951-4f28197f1f27",
+      "id": 8
+      },
+      "path": "моносуші",
+      "description": "Рис, крем сир, огірок, креветка, авокадо, унагі соус",
+      "weight": "280",
+      "price": 232,
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/final-work-logos.appspot.com/o/01.-syrnyj.jpg.pagespeed.ce.H76YcCbCou.jpg?alt=media&token=528bd54b-212e-4406-a951-4f28197f1f27",
+      "count": 1,
+      "id": 2
+    },
+    {
+      "name": "Приклад сету",
+      "category": {
+        "name": "Сети",
+        "path": "сети",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/final-work-logos.appspot.com/o/1.-filadelfiya-z-lososem.jpg.pagespeed.ce.axvTz8qDqj.jpg?alt=media&token=e232aee6-89c8-4be5-a6c8-5937355eb9c3",
+      "id": 9
+      },
+      "path": "priklad-set",
+      "description": "Запечений сирний з креветкою\nЗапечений моно з тунцем",
+      "weight": "640",
+      "price": 400,
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/final-work-logos.appspot.com/o/1.-filadelfiya-z-lososem.jpg.pagespeed.ce.axvTz8qDqj.jpg?alt=media&token=e232aee6-89c8-4be5-a6c8-5937355eb9c3",
+      "count": 1,
+      "id": 6
+    },
+    {
+      "name": "Pepse",
+      "category": {
+        "name": "Напої",
+        "path": "напої",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/final-work-logos.appspot.com/o/pepsicola.jpg.pagespeed.ce._GE3wDu348.jpg?alt=media&token=4c71428f-76f6-4b4b-9205-5b888e15bd4e",
+        "id": 10
+      },
+      "path": "pepsi",
+      "description": "pepsi",
+      "weight": "0.33",
+      "price": 31,
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/final-work-logos.appspot.com/o/pepsicola.jpg.pagespeed.ce._GE3wDu348.jpg?alt=media&token=4c71428f-76f6-4b4b-9205-5b888e15bd4e",
+      "count": 1,
+      "id": 7
+    },
+    {
+      "name": "Васабі",
+      "category": {
+        "name": "Соуси",
+        "path": "соуси",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/final-work-logos.appspot.com/o/4444.png.pagespeed.ce.eju3nbNNBX.png?alt=media&token=af2aa9cb-f610-4beb-9dae-8264beba8536",
+        "id": 11
+      },
+      "path": "vasabi",
+      "description": "соус",
+      "weight": "24",
+      "price": 12,
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/final-work-logos.appspot.com/o/4444.png.pagespeed.ce.eju3nbNNBX.png?alt=media&token=af2aa9cb-f610-4beb-9dae-8264beba8536",
+      "count": 1,
+      "id": 8
+    }
+  ],
+  "auth": [{
+      "id": 1,
+      "email": "admin@gmail.com",
+      "password": "admin123",
+      "fullName": "Lorem Ipsum",
+      "role": "ADMIN"
+    },
+    {
+      "id": 2,
+      "email": "user@gmail.com",
+      "password": "user123",
+      "fullName": "Lorem Amet",
+      "role": "USER"
+    }
+  ]
+
+
+}
