@@ -1,0 +1,15 @@
+<div class="col-10">
+    <h4 class="card-title mb-4 text-center">Ваші дані</h4>
+    <form [formGroup]="userDataForm" (ngSubmit)="userDataUpdate()">
+        <div class="col">
+            <div class="mb-3 col-6 m-auto">
+                <input formControlName="name" type="text" class="form-control" id="name">
+            </div>
+            <div class="mb-5 col-6 m-auto">
+                <input formControlName="email" type="text" class="form-control" id="email">
+            </div>
+        </div>
+        <button [disabled]="userDataForm.invalid" type="submit" class="btn btn-submit col-6 m-auto">ЗБЕРЕГТИ
+            ЗМІНИ</button>
+    </form>
+</div>

@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="breadcrumb-wraper">
+    <nav class="breadcrumb-divider"  aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item" [routerLink]="[ '/' ]"><a>Головна</a></li>
+        <li class="breadcrumb-item " [routerLink]="[ '/product/' + currentProduct.category.path ]" 
+            aria-current="page">{{currentProduct.category.name}}</li>
+        <li class="breadcrumb-item active" aria-current="page">{{currentProduct.name}}</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+<div class="spacer-70"></div>
+<div class="spacer-30"></div>
+<div class="container">
+  <div class="row justify-content-evenly">
+    <div class="col-xl-4 col-lg-4 col-md-8 align-self-center">
+      <img class="img img-fluid rounded-start" [src]="currentProduct.imagePath"
+       [alt]="currentProduct.name">
+    </div>
+    <div class=" col-xl-4 col-lg-6 col-md-11">
+      <div class="card-body">
+        <h5 class="card-title"> {{currentProduct.name}}</h5>
+        <span class="card-text-title">Склад:</span>
+        <span class="card-text ms-2">{{currentProduct.description}}</span>
+        <div>
+          <span class="card-text-title ">Bага:</span>
+          <span class="card-text ms-2">{{currentProduct.weight}} г</span>
+        </div>
+        <div class="product-controls">
+          <div class="product-price">
+            <b>{{currentProduct.price*currentProduct.count}}</b> грн
+          </div>
+          <div class="thumb-input-number">
+            <button type="button" (click)="productCount(currentProduct, false)">-</button>
+            <input type="text" [value]="currentProduct.count" readonly max="99">
+            <button type="button" (click)="productCount(currentProduct, true)">+</button>
+          </div>
+          <button class="btn-order" (click)="addToBasket(currentProduct)" >
+            Замовити
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="spacer-70"></div>
+<div class="spacer-30"></div>

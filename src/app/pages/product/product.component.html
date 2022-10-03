@@ -1,0 +1,74 @@
+<div class="spacer-60"></div>
+<div class="spacer-30"></div>
+<div class="center-info">
+  <h2 class="title-center"> {{userProducts[0]?.category?.name}} </h2>
+</div>
+<div class="spacer-40"></div>
+<div class="container">
+  <ng-container *ngIf="userProducts[0]?.category?.path === 'роли' ">
+    <div class="categories-menu">
+      <ul class="categories-list">
+        <li class="categories-list-item active">
+          <a>Всі</a>
+        </li>
+        <li class="categories-list-item ">
+          <a> Філадельфія</a>
+        </li>
+        <li class="categories-list-item ">
+          <a>Каліфорнія</a>
+        </li>
+        <li class="categories-list-item ">
+          <a>Запечені</a>
+        </li>
+        <li class="categories-list-item ">
+          <a>Фірмові</a>
+        </li>
+        <li class="categories-list-item ">
+          <a>Преміум</a>
+        </li>
+        <li class="categories-list-item ">
+          <a>Макі</a>
+        </li>
+      </ul>
+    </div>
+  </ng-container>
+  <div class="product-wraper">
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-4 col-xl-3" *ngFor="let product of userProducts">
+        <div class="product">
+          <div class="product-image-wrap">
+            <a class="product-image">
+              <img class="img" [src]="product.imagePath" [alt]="product.name"
+                [routerLink]="['/product/' + product.category.path, product.id ]">
+            </a>
+          </div>
+          <div class="product-title-wrap">
+            <div class="product-title m-auto">
+              <a [routerLink]="['/product/' + product.category.path, product.id ]">
+                {{product.name}}
+              </a>
+            </div>
+          </div>
+          <div class="product-desc">
+            <p>{{product.description}}</p>
+            <div class="product-size"><span>{{product.weight}}</span> г</div>
+          </div>
+          <div class="product-controls">
+            <div class="product-price">
+              <b>{{product.price*product.count}}</b> грн
+            </div>
+            <div class="thumb-input-number">
+              <button type="button" (click)="productCount(product, false)">-</button>
+              <input type="text" [value]="product.count" readonly max="99">
+              <button type="button" (click)="productCount(product, true)">+</button>
+            </div>
+            <button class="btn-order" (click)="addToBasket(product)" >
+                    Замовити
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="spacer-60"></div>
+  <div class="spacer-30"></div>

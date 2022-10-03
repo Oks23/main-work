@@ -1,0 +1,32 @@
+#authorForm input {
+  font-size: 16px;
+  height: 56px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  color: #252525;
+  line-height: 56px;
+  padding: 0 20px 0 23px;
+  transition: 0.35s;
+  text-overflow: ellipsis;
+  margin: 15px 0;
+  overflow: hidden;
+}
+
+#authorForm {
+    margin: 150px 0;
+}
+
+#authorForm .btns {
+font-size: 20px;
+border-radius: 10px;
+border: 2px solid #b5d8f7;
+background-color: #b5d8f7;
+transition: 0.35s;
+text-transform: uppercase;
+height: 56px;
+cursor: pointer;
+}
+
+#authorForm .btns:hover {
+    background-color: #fff;
+}

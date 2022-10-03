@@ -1,0 +1,212 @@
+<div class="container" [ngClass]="{'order-done':submittedOrder}">
+  <div class="row justify-content-center">
+    <div class="col-xl-6 col-lg-10 col-12">
+      <div class="spacer-60"></div>
+      <div class="center-info">
+        <h2 class="title-center">Оформити замовлення</h2>
+      </div>
+      <form class="mt-4">
+
+        <div class="basket-products" *ngFor="let products of basket ">
+          <span class="basket-products-img">
+            <img class="img" [src]="products.imagePath"
+              [routerLink]="['/product/' + products.category.path, products.id ]">
+          </span>
+          <div class="basket-products-desc">
+            <span class="title-basket" [routerLink]="['/product/' + products.category.path, products.id ]">
+              {{products.name}}
+            </span>
+            <div class="basket-products-controls">
+              <div class="thumb-input-number">
+                <button (click)="productCount(products, false)" type="button">-</button>
+                <input class="product-qty" [value]="products.count" readonly="" max="999">
+                <button (click)="productCount(products, true)" type="button">+</button>
+              </div>
+              <div class="basket-products-price">
+                <b>{{products.price*products.count}}</b> грн
+              </div>
+              <button type="button" class="remove-product" (click)="deleteFromBasket(products)">
+                <div class="trash"></div>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="user-info">
+          <div class="container">
+            <div class="col-12 m-auto d-flex flex-column justify-content-between">
+                <div class="col mb-4">
+                    <div class="row form-title">
+                        <i class="number-title"><b>1</b></i>
+                        <h5>Оберіть кількість приборів</h5>
+                    </div>
+                    <div class="row d-flex align-items-center justify-content-between">
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                            <input type="number" value="1" class="form-control">
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                            <select class="form-select" id="holders">
+                                <option>Навчальні тримачі</option>
+                                <option>0</option>
+                                <option>1</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-4">
+                    <div class="row form-title">
+                        <i class="number-title"><b>2</b></i>
+                        <h5>Спосіб оплати</h5>
+                    </div>
+                    <div class="d-flex">
+                        <div class="d-flex flex-wrap col-12">
+                            <div class="form-check col-xs-12 col-sm-12 col-6">
+                                <input class="form-check-input" type="radio" name="firstBox" id="cachePay" checked>
+                                <label class="form-check-label" for="cachePay">
+                                    Оплата готівкою
+                                </label>
+                            </div>
+                            <div class="form-check  col-xs-12 col-sm-12 col-6">
+                                <input class="form-check-input" type="radio" name="firstBox" id="cardPay">
+                                <label class="form-check-label" for="cardPay">
+                                    Безготівкова оплата
+                                </label>
+                            </div>
+                        </div>
+        
+                    </div>
+                </div>
+                <div class="col mb-4">
+                    <div class="row form-title">
+                        <i class="number-title"><b>3</b></i>
+                        <h5>Спосіб доставки</h5>
+                    </div>
+                    <div class="d-flex flex-wrap">
+                        <div class="form-check col-xs-12 col-sm-12 col-md-6">
+                            <input class="form-check-input" type="radio" name="secondBox" id="deliveryCheck" (click)="deliveryChange()">
+                            <label class="form-check-label" for="deliveryCheck">
+                                Доставка
+                            </label>
+                        </div>
+                        <div class="form-check col-xs-12 col-sm-12 col-md-6">
+                            <input class="form-check-input" type="radio" name="secondBox" id="ownGetAway" (click)="getOwnAwayChange()">
+                            <label class="form-check-label" for="ownGetAway">
+                                Самовивіз ( "Запечені моно макі з лососем" в подарунок )
+                            </label>
+                        </div>
+                        <div class="form-check  col-xs-12 col-sm-12 col-md-6">
+                            <input class="form-check-input" type="radio" name="secondBox" id="soonerGetAway" (click)="soonerGetAwayChange()">
+                            <label class="form-check-label" for="soonerGetAway">
+                                Заздалегідь
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="container">
+            <div class="col-12 m-auto d-flex flex-column justify-content-between" >
+                <form class="mb-3">
+                    <div class="row delivery-change" [ngClass]="{'show-delivery':delivery}" [ngClass]="{'show-sooner':soonerGetAway}">
+                        <div class="col-xs-12 col-md-6">
+                            <input type="text" class="form-control" autocomplete="name" placeholder="Ваше ім'я *" required>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <input type="text" class="form-control col-6" placeholder="Ваш телефон *" required>
+                        </div>
+                    </div>
+                    <div class="row delivery-change" [ngClass]="{'show-own':getOwnAway}">
+                        <div class="col-xs-12 col-md-6">
+                            <input type="text" class="form-control" autocomplete="name" placeholder="Ваше ім'я *" required>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <input type="text" class="form-control col-6" placeholder="Ваш телефон *" required>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <select class="form-select" id="holders">
+                                <option>Оберіть точку самовивозу</option>
+                                <option>Чорновола 95</option>
+                                <option>Володимира Великого 10Б</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row delivery-change" [ngClass]="{'show-sooner':soonerGetAway}" [ngClass]="{'show-sooner':soonerGetAway}">
+                        <div class="col-xs-12 col-md-6">
+                            <input type="datetime-local"  class="form-control col-6" name="self_delivery_date" placeholder="Дата доставки" autocomplete="off" value="">
+                        </div>
+                    </div>
+                    <div class="row delivery-change" [ngClass]="{'show-delivery':delivery}" [ngClass]="{'show-sooner':soonerGetAway}">
+                        <div class="col-xs-12 col-md-6">
+                            <input type="text" class="form-control" autocomplete="name" placeholder="Вулиця *" required>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <input type="text" class="form-control col-6" autocomplete="email" placeholder="Номер будинку *" required>
+                        </div>
+                    </div>
+                    <div class="row delivery-change" [ngClass]="{'show-delivery':delivery}" [ngClass]="{'show-sooner':soonerGetAway}">
+                        <div class="col-xs-12 col-md-6">
+                            <input type="text" class="form-control" autocomplete="name" placeholder="Під'їзд">
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <input type="text" class="form-control col-6" autocomplete="email" placeholder="Квартира">
+                        </div>
+                    </div>
+                </form>
+                <hr>
+            </div>
+            <div class="col-6">
+                <div class="col mb-2">
+                    <input class="form-check-input" type="checkbox" name="secondBox" id="flexCheckChecked6">
+                    <label class="form-check-label" style="padding-left: 12px;" for="flexCheckChecked6"> Зателефонуйте мені для деталей
+                    </label>
+                </div>
+                <div class="col mb-2">
+                    <input class="form-check-input" type="checkbox" name="secondBox" id="flexCheckChecked7"
+                        (click)="commentChange()">
+                    <label class="form-check-label" style="padding-left: 12px;" for="flexCheckChecked7"> Додати коментар
+                    </label>
+                    <ng-container *ngIf="comment">
+                        <div class="form-floating my-3">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                            <label for="floatingTextarea">Ваш коментар</label>
+                        </div>
+                    </ng-container>
+                </div>
+                <div class="col mb-2">
+                    <input class="form-check-input" type="checkbox" name="secondBox" id="flexCheckChecked8"
+                        (click)="commentKitchenChange()">
+                    <label class="form-check-label" style="padding-left: 12px;" for="flexCheckChecked8"> Додати коментар для
+                        кухні</label>
+                    <ng-container *ngIf="commentKitchen">
+                        <div class="form-floating my-3">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                            <label for="floatingTextarea">Ваш коментар для кухні</label>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+        <button class="btns" type="submit" (click)="clear()">Оформити замовлення</button>
+    </form>
+    <div class="spacer-120"></div>
+  </div>
+</div>
+</div>
+
+<div class="row justify-content-center order-done-animE" [ngClass]="{'order-done-animS':submittedOrder}">
+    <div class="lds-dual-ring"></div>
+</div>
+<div class="row justify-content-center order-done-blockS" [ngClass]="{'order-done-block':submittedOrder}">
+    <div class="col-xl-6 col-lg-10 col-12 order-complited-block">
+        <div class="order-complited">
+            <div class="order-complited__close-box">
+                <a href="/">x</a>
+            </div>
+            <div class="order-complited__text-box">
+                <p class="order-complited__text-box__main">Дякуюємо, Ваше замовлення прийнято!</p>
+                <p class="order-complited__text-box__submain">Нехай смакує.</p>
+            </div>
+        </div>
+    </div>
+</div>

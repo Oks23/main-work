@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="breadcrumb-wraper">
+    <nav class="breadcrumb-divider"  aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item" [routerLink]="[ '/' ]"><a>Головна</a></li>
+        <li class="breadcrumb-item " [routerLink]="[ '/discount' ]" aria-current="page">Акції</li>
+        <li class="breadcrumb-item active" aria-current="page">{{discount.name}}</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+<div class="spacer-60"></div>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-xl-8 col-lg-10 col-12">
+      <div class="card">
+        <img [src]="discount.imagePath" class="card-img-top" alt="...">
+        <div class="card-body">
+          <div class="title">{{discount.title}}</div>
+          <div class="discount-description">{{ discount.description }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="spacer-120"></div>
+<div class="spacer-30"></div>

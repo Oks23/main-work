@@ -1,0 +1,266 @@
+@import '../../shared/styles/variables';
+@import '../../shared/styles/fonts';
+
+footer {
+  font-family: $main_font;
+  color: $text_main;
+  border-top: 4px solid #b5d8f7;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.footer-logo {
+  max-width: 136px;
+  cursor: pointer;
+
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.menu-footer-list {
+  display: flex;
+}
+
+.menu-item {
+  cursor: pointer;
+  transition: 0.35s;
+}
+
+.menu-item:hover {
+  color: $main;
+}
+
+ul,
+ol,
+
+a {
+  list-style: none;
+  color: inherit;
+  text-decoration: none;
+  transition: .35s;
+}
+
+.menu-footer-list li+li {
+  margin-left: 55px;
+}
+
+.footer-info {
+  display: flex;
+  justify-content: space-between;
+  line-height: 1.25em;
+}
+
+.footer-info-item {
+  font-size: 14px;
+  color: #252525;
+  text-align: center;
+  padding: 0 25px;
+
+  p {
+    margin-bottom: 5px;
+  }
+
+  ul {
+    margin-bottom: 0px;
+    padding: 0;
+  }
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  p {
+    margin: 0;
+  }
+}
+.footer-top,.footer-bottom {
+  margin: 0 15px;
+}
+.copyright {
+  font-size: 14px;
+  color: $secondary_text;
+  white-space: nowrap;
+}
+
+.pay-cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pay-card-item {
+  position: relative;
+  width: 69px;
+  height: 39px;
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+  display: inline-block;
+
+  img {
+    max-width: 45px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.pay-cards .pay-card-item+.pay-card-item {
+  margin-left: 5px;
+}
+
+.social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+
+  span {
+    margin-right: 20px;
+    font-size: 14px;
+    color: #252525;
+  }
+
+  ul {
+    display: flex;
+    padding: 0px;
+    margin: 0;
+  }
+}
+
+.icon-btn {
+  display: block;
+  width: 49px;
+  height: 49px;
+  background-color: #b5d8f7;
+  border: 2px solid #b5d8f7;
+  border-radius: 10px;
+  position: relative;
+  transition: 0.35s;
+  margin: 0 10px;
+
+  img {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+.icon-btn:hover {
+  background-color: #fff;
+}
+.social ul li+li {
+  margin-left: 5px;
+}
+
+.footer-dev-logo {
+  margin-right: 12px;
+  font-size: 12px;
+  transition: 0.35s;
+  color: $secondary_text;
+}
+
+.footer-dev-logo:hover {
+  color: $main;
+}
+
+.footer-dev-logo+span {
+  font-family: 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+@media screen and (max-width:1200px) {
+  .menu-footer-list li+li {
+    margin-left: 25px;
+  }
+
+}
+
+@media screen and (max-width:1000px) {
+  footer {
+    margin-bottom: 70px;
+  }
+
+  .footer-top,.footer-bottom {
+    flex-wrap: wrap;
+  }
+  .footer-info {
+    margin-top: 25px;
+    width: 100%;
+  }
+
+}
+
+
+@media screen and (max-width:770px) {
+  .footer-top {
+    font-size: 14px;
+    display: block;
+  }
+
+  .footer-info-item ul{
+    padding-left: 0rem;
+  }
+  .icon-btn{
+    width: 35px;
+    height: 35px;
+    img{
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  .menu-footer-list {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    padding-left: 0rem;
+    font-weight: 600;
+  }
+  .menu-footer-list li + li {
+   margin: 15px 0;
+  }
+  .footer-info {
+    margin-top: 0;
+    display: block;
+  }
+  .footer-info-item {
+    margin: 15px 0;
+  }
+  .footer-bottom .pay-cards {
+    margin: 0 auto;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+    -webkit-box-ordinal-group: 1;
+    -ms-flex-order: 0;
+    order: 0;
+}
+.footer-logo[_ngcontent-msu-c71] {
+  display: inline-block;
+}
+  .social {
+    width: 100%;
+  }
+  .copyright {
+    -webkit-box-ordinal-group: 1;
+    order: 1;
+  }
+  .developer-link {
+    -webkit-box-ordinal-group: 2;
+    order: 2;
+  }
+}

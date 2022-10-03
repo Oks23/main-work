@@ -1,0 +1,41 @@
+<div class="spacer-60"></div>
+<div class="spacer-30"></div>
+<div class="center-info">
+   <h2 class="title-center">Акції</h2>
+</div>
+<div class="spacer-60"></div>
+<div class="container">
+    <div class="row justify-content-center">
+        <ng-container *ngIf="userDiscounts.length > 0">
+            <div class="col-xl-5 col-md-6 col-sm-10 col-12" *ngFor="let discount of userDiscounts">
+                <div class="card">
+                    <div class="image-wraper">
+                        <img [src]="discount.imagePath" class="card-img-top"
+                         alt="..." [routerLink]="[ '/discount', discount.id ]">
+                    </div>
+                         <h5 class="title card-name" 
+                             [routerLink]="[ '/discount', discount.id ]">
+                             {{discount.name}}
+                         </h5>
+                    <hr>
+                    <div class="bns-wraper text-center">
+                       <button class="btns" [routerLink]="[ '/discount', discount.id ]">
+                           ДIЗНАТИСЯ БІЛЬШЕ
+                       </button>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="userDiscounts.length === 0">
+            <div class="card text-center">
+                <div class="card-header"></div>
+                <div class="card-body">
+                    <h1 class="text-center">Акції ще не додані</h1>
+                </div>
+                <div class="card-footer text-muted"></div>
+              </div>
+        </ng-container>
+    </div>
+</div>
+<div class="spacer-120"></div>
+<div class="spacer-30"></div>

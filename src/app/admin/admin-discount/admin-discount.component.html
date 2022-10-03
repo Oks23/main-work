@@ -1,0 +1,90 @@
+<div class="row justify-content-center">
+  <p class="coll ">
+    <button *ngIf="!editStatus"  class="btns ms-2 " style="width: 250px;" data-bs-toggle="collapse"
+            href="#collapseForm" role="button" (click)="triggerOpenForm()"
+            aria-expanded="false" aria-controls="collapseForm">
+            {{isOpen ? 'Закрити' : 'Додати акцію'}}
+    </button>
+  </p>
+  <div class="collapse row justify-content-center" [ngClass]="{'show':isOpen}"
+   id="collapseForm">
+    <div class="col-12">
+      <form [formGroup]="discountForm" class="was-validated" (ngSubmit)="addDiscount()">
+        <div class="mb-3">
+          <label for="name" class="form-label is-invalid">Назва</label>
+          <input formControlName="name" name="name" type="text"
+                class="form-control" id="name" placeholder="Назва..."
+                  required="Назва">
+        </div>
+        <div class="mb-3">
+          <label for="title" class="form-label">Заголовок</label>
+          <input formControlName="title" name="title" type="text" class="form-control"
+                  id="title"
+                  placeholder="Заголовок..." required>
+        </div>
+        <div class="mb-3">
+          <div class="mb-3">
+            <label for="description" class="form-label">Опис</label>
+            <textarea formControlName="description" name="description"
+                      id="description" class="form-control"
+                      placeholder="Опис..." required>
+            </textarea>
+          </div>
+          <label for="formFile" class="form-label">Завантажити зображення</label>
+          <input name="formFil" type="file" (change)="upload($event)"
+                  class="form-control" id="formFile" required>
+          <div class="progress mb-3 mt-2">
+            <div class="progress-bar progress-bar-striped progress-bar-animated"
+                  role="progressbar"
+                  [style.width.%]="uploadPercent" aria-valuemin="0"
+                  aria-valuemax="100">
+            </div>
+          </div>
+          <img [src]="valueByControl('imagePath')" alt="" class="load-discount-image">
+        </div>
+        <button type="submit" [disabled]="discountForm.invalid" class="btns">
+                {{ editStatus?'ЗБЕРЕГТИ':'ДOДАТИ АКЦІЮ' }}
+        </button>
+
+      </form>
+    </div>
+  </div>
+  <div class="col-12">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Дата</th>
+          <th scope="col">Назва</th>
+          <th scope="col">Заголовок</th>
+          <th scope="col">Опис</th>
+          <th scope="col">Зображення</th>
+          <th scope="col">Дії</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let discount of adminDiscounts">
+          <td>{{ currentDate | date:'dd.MM.YY' }}</td>
+          <td>{{ discount.name }}</td>
+          <td>{{ discount.title }}</td>
+          <td>
+            {{ discount.description | slice:0:100 }}
+            <span *ngIf="discount.description.length > 101">...</span>
+          </td>
+          <td>
+            <img [src]="discount.imagePath" alt="" class="discount-image">
+          </td>
+          <td>
+            <button (click)="editDiscount(discount)" type="button" 
+                    class="btn">
+                    Редагувати
+            </button>
+            <button [disabled]="editStatus" (click)="deleteDiscount(discount)"
+                     type="button" class="btn">
+                     Видалити
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

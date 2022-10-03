@@ -1,0 +1,226 @@
+<div class="baner-wraper">
+  <div class="background-image"></div>
+  <div class="background-image-mob"></div>
+  <div class="baner-info">
+    <div class="row justify-content-center">
+      <div class="col-xl-10 col-sm-10  col-12">
+        <div class="left-info">
+          <div class="baner-info-title">Ми - це доcтавка
+            <b> щастя. Monosushi </b>- Ми любимо коли тобі
+            смачно.</div>
+          <div class="baner-info-text">
+            Найсмачніші сушики вже чекають на тебе.
+            Не барись, а обирай свої улюблені позиції
+            і вже скоро вони будуть у тебе!
+          </div>
+          <div class="baner-info-btn">
+            <a href="/about">
+              <button class="btns">
+                ДЕТАЛЬНІШЕ
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="after-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="after-banner-item">
+          <div class="after-banner-img">
+            <img src="https://monosushi.com.ua/wp-content/uploads/2020/10/mn-delivery-img.svg" alt="">
+          </div>
+          <button class="btns btn-secondary" [routerLink]="[ '/delivery' ]">
+            зони доставки</button>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="after-banner-item">
+          <div class="after-banner-img">
+            <img src="https://monosushi.com.ua/wp-content/uploads/2020/10/mono-supermen.svg"
+                 alt="" id="schedule">
+          </div>
+          <div class="after-banner-info">Середній час доставки в зеленій зоні
+            <b>45 хвилин</b>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="after-banner-item">
+          <div class="after-banner-img">
+            <img src="https://monosushi.com.ua/wp-content/uploads/2020/10/mono-bonus.svg"
+                 alt="" id="schedule">
+          </div>
+          <div class="after-banner-info">
+                Наш графік роботи Працюємо з
+                <b>09:00</b> до <b>22:00</b>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="spacer-30"></div>
+<section id="section-with-catalogue">
+  <div class="container">
+    <div class="product-wraper">
+      <div class="row justify-content-center">
+        <ng-container *ngIf="userProducts[0]?.category?.path === 'роли'">
+          <div class="categories-menu">
+            <ul class="categories-list">
+              <li class="categories-list-item active">
+                <a>Всі</a>
+              </li>
+              <li class="categories-list-item ">
+                <a> Філадельфія</a>
+              </li>
+              <li class="categories-list-item ">
+                <a>Каліфорнія</a>
+              </li>
+              <li class="categories-list-item ">
+                <a>Запечені</a>
+              </li>
+              <li class="categories-list-item ">
+                <a>Фірмові</a>
+              </li>
+              <li class="categories-list-item ">
+                <a>Преміум</a>
+              </li>
+              <li class="categories-list-item ">
+                <a>Макі</a>
+              </li>
+            </ul>
+          </div>
+        </ng-container>
+        <div class="col-md-6 col-lg-4 col-xl-3" *ngFor="let product of userProducts">
+          <ng-container >
+            <div class="product">
+              <div class="product-image-wrap">
+                <a class="product-image">
+                  <img class="img" [src]="product.imagePath" [alt]="product.name"
+                    [routerLink]="['/product/' + product.category.path, product.id ]">
+                </a>
+              </div>
+              <div class="product-title-wrap">
+                <div class="product-title m-auto">
+                  <a [routerLink]="['/product/' + product.category.path, product.id ]">
+                    {{product.name}}
+                  </a>
+                </div>
+              </div>
+              <div class="product-desc">
+                <p>{{product.description}}</p>
+                <div class="product-size"><span>{{product.weight}}</span> г</div>
+              </div>
+              <div class="product-controls">
+                <div class="product-price">
+                  <b>{{product.price*product.count}}</b> грн
+                </div>
+                <div class="thumb-input-number">
+                  <button type="button" (click)="productCount(product, false)">-</button>
+                  <input type="text" [value]="product.count" readonly max="99">
+                  <button type="button" (click)="productCount(product, true)">+</button>
+                </div>
+                <button class="btn-order" (click)="addToBasket(product)" >
+                  Замовити
+                </button>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="spacer-90"></div>
+<div class="info-block">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xl-9 col-lg-12">
+        <h3 class="info-block-title">Доставка суші у Львові від "Monosushi"</h3>
+        <div class="spacer-60"></div>
+        <div class="row ">
+          <div class="info-block-text-wraper">
+            <p><strong>Безкоштовна доставка суші у Львові </strong>
+              <strong>Monosushi</strong>
+              <strong>.</strong>
+            </p>
+            <p>Нам 1 рік, а ми вже підкорили серця багатьох львів’ян.
+              І це лише початок! Адже кожного місяця ми стараємось для Вас і
+              стаємо кращими у кожному аспекті. Ми не ті, про кого кажуть:
+              «Зіпсувались». Ми вкладаємо всю душу в нашу компанію та радіємо
+              кожному Вашому позитивному відгуку!
+            </p>
+            <div>
+              <div class="more-text" data-bs-toggle="collapse" href="#collapseExample"
+                   role="button" aria-expanded="false" aria-controls="collapseExample">
+                Дізнатись більше
+              </div>
+            </div>
+            <div class="collapse" id="collapseExample">
+              <div class="card card-body">
+                <p><strong>Чому ми?</strong></p>
+                <ol>
+                  <li><strong>Якість продуктів. </strong>Спробувавши
+                    десятки різних доставок ми зрозуміли, що запорукою та
+                    секретом смаку завжди є свіжі та якісні продукти. Саме
+                    тому ми з особливим трепетом та уважністю обираємо
+                    продукти, які поїдуть до нас на кухню.
+                  </li>
+                  <li><strong>Неймовірний смак. </strong>Так, ми Вас
+                    розуміємо. Важко в це повірити коли кожна доставка обіцяє
+                    «смачний продукт». Проте, ми використовуємо інгредієнти,
+                    які за якістю є на порядок вище тих, які використовуть
+                    наші конкуренти у своїх рецептах. Ми не економимо і
+                    використовуємо лише найбільш якісні та дорогі продукти
+                    для створення наших страв! Ну і чого тільки варті наші
+                    Запечені сирні суші! Вони однозначно є хедлайнерами
+                    нашого меню! Це те, чого Ви раніше ще точно не
+                    куштували!
+                  </li>
+                  <li><strong>Великі порції.</strong> Ми любимо смачно та
+                    ситно поїсти! Впевнені, Ви теж! Тому, ми з неабияким
+                    захватом підійшли до розробки грамажу наших ролів. Ми
+                    намагались віднайти ідеальний розмір аби наші моносуші
+                    були доволі ситними, але в той же час комфортними для
+                    споживання<em>. </em><strong><br>
+                    </strong>Також, кожного разу при приготуванні ролів ми
+                    використовуємо ваги аби страва відповідала грамажу
+                    вказаному на сайті!</li>
+                  <li><strong>Абсолютна чистота на кухні. </strong>При
+                    приготуванні страв ми притримуємось усіх санітарних норм
+                    та правил аби Ви могли бути на 100% впевнені в якості та
+                    безпечності страв.
+                  </li>
+                  <li><strong>Гарне упакування та уважність до
+                      деталей! </strong>Monosushi – були створені командою
+                    перфекціоністів, тому кожна деталь нашого упакування
+                    продумана до дрібниць
+                  </li>
+                </ol>
+                <ul>
+                  <li>Фотографії продуктів несуть ознайомчий характер і
+                    можуть відрізнятися від оригіналу.
+                  </li>
+                </ul>
+                <ul>
+                  <li>Замовлення вважається прийнятим з моменту опрацювання
+                    його оператором колл-центру дзвінком до клієнта.
+                  </li>
+                </ul>
+              </div>
+              <div class="more-text mt-3" data-bs-toggle="collapse" href="#collapseExample" role="button"
+                aria-expanded="false" aria-controls="collapseExample">
+                Згорнути
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="spacer-120"></div>

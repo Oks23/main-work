@@ -1,0 +1,126 @@
+@import '../../shared/styles/variables';
+@import '../../shared/styles/fonts';
+
+.spacer-60 {
+  height: 60px;
+}
+
+.spacer-120 {
+  height: 120px;
+}
+
+.center-info {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.title-center {
+  display: inline-block;
+  padding-top: 10px;
+  font-size: 42px;
+  line-height: 1.2em;
+  font-family: $main_font_bolder;
+  color: $text_main;
+  position: relative;
+}
+
+.title-center::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+  width: 100%;
+  height: 5px;
+  background: #b5d8f7;
+}
+
+.container {
+  max-width: 1750px;
+  color: $text_main;
+  font-family: $main_font;
+}
+
+.image-wraper {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card-img-top {
+  border-radius: 10px;
+  transition: 0.35s;
+  cursor: pointer;
+}
+
+.card-img-top:hover {
+  transform: scale(1.05);
+}
+
+.title {
+  color: $text_main;
+  font-family: $main_font_bolder;
+  text-align: center;
+}
+
+.card-name {
+  margin-top: 20px;
+  margin-bottom: 11px;
+  line-height: 1.4em;
+  text-transform: uppercase;
+  transition: 0.35s;
+  cursor: pointer;
+}
+
+.card-name:hover {
+  color: $main;
+}
+
+hr {
+  width: 100%;
+  height: 3px;
+  background-color: $main;
+  border-radius: 10px;
+  margin: 15px 0;
+  opacity: 100%;
+}
+
+.card {
+  border: 4px solid transparent;
+  margin-bottom: 40px;
+}
+
+.btns {
+  border-radius: 10px;
+  border: $border;
+  background-color: $main;
+  transition: 0.35s;
+  font-family: $main_font_bolder;
+  text-transform: uppercase;
+  padding: 14px 16px;
+  font-size: 14px;
+  line-height: 14px;
+  cursor: pointer;
+  max-width: 257px;
+  width: 100%;
+}
+
+.btns:hover {
+  background-color: initial;
+  color: rgb(0, 0, 0);
+}
+
+@media screen and (max-width:770px) {
+
+  .spacer-60,
+  .spacer-120 {
+    display: none;
+  }
+
+  .spacer-30 {
+    height: 30px;
+  }
+
+  .title-center {
+    font-size: 34px;
+  }
+}
