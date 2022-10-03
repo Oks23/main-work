@@ -2,6 +2,7 @@ import {
   Component,
   OnInit
 } from '@angular/core';
+import { Router } from '@angular/router';
 import {
   IProductResponse
 } from 'src/app/shared/interfaces/products/products.interface';
@@ -19,6 +20,7 @@ export class HomeComponent implements OnInit {
   public userProducts: Array < IProductResponse >= [];
   
   constructor(
+    private router: Router,
     private productService: ProductService,
     private orderService:OrderService) {}
 
@@ -68,7 +70,8 @@ export class HomeComponent implements OnInit {
       cancelButtonText: 'Я перегляну ще інші товари',
     }).then((result) => {
       if (result.value) {
-        window.location.href = "checkout";
+        this.router.navigate(['/checkout'])
+        // window.location.href = "checkout";
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.close();
       }
