@@ -68,7 +68,7 @@ export class HomeComponent implements OnInit {
       cancelButtonText: 'Я перегляну ще інші товари',
     }).then((result) => {
       if (result.value) {
-        window.location.href = "checkout";
+        window.location.href = "https://oks23.github.io/main-work/checkout";
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.close();
       }
